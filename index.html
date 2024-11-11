@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virginia DBHDS Resources</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="banner">
+    <h1>Welcome to Virginia DBHDS Resources</h1>
+    <p>Your guide to mental health and developmental services in Virginia.</p>
+    <a href="#map" class="cta-button">Find Resources Near You</a>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map-section">
+    <h2>Explore Resources in Virginia</h2>
+    <div id="map"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Virginia Department of Behavioral Health and Developmental Services</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    var map = L.map('map').setView([37.4316, -78.6569], 7);  // Center on Virginia
+
+    // Add a tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+    }).addTo(map);
+
+    // Define markers for CSBs and facilities
+    var csbMarker = L.marker([37.54, -77.46]).bindPopup('<b>CSB Example</b><br>Richmond');
+    var facilityMarker = L.marker([37.22, -79.94]).bindPopup('<b>State Facility Example</b><br>Roanoke');
+
+    // Create layers for each category
+    var csbLayer = L.layerGroup([csbMarker]);
+    var facilityLayer = L.layerGroup([facilityMarker]);
+
+    // Add layer control
+    L.control.layers(null, {
+      'Community Service Boards': csbLayer,
+      'State Facilities': facilityLayer
+    }).addTo(map);
+
+    // Display layers by default
+    csbLayer.addTo(map);
+    facilityLayer.addTo(map);
+  </script>
+
+</body>
+</html>
