@@ -1,0 +1,101 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 1em 0;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Banner */
+.banner {
+  background-color: #00509e;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.2em;
+}
+
+.banner .cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #004080;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.banner .cta-button:hover {
+  background-color: #ffdd44;
+}
+
+/* Map Section */
+#map-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#map-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#map {
+  height: 600px;
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #004080;
+}
+
+/* Footer */
+footer {
+  background-color: #004080;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
